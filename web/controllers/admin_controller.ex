@@ -1,11 +1,6 @@
 defmodule ExAdmin.AdminController do
   @moduledoc false
   use ExAdmin.Web, :controller
-  # require Logger
-  import ExAdmin
-  import ExAdmin.Utils
-  import ExAdmin.ParamsToAtoms
-  require IEx
 
   plug :set_layout
   

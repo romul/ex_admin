@@ -19,6 +19,11 @@ defmodule ExAdmin.Web do
       import Ecto.Query, only: [from: 1, from: 2]
 
       import ExAdmin.Router.Helpers
+      # require Logger
+      import ExAdmin
+      import ExAdmin.Utils
+      import ExAdmin.ParamsToAtoms
+      require IEx
     end
   end
 
