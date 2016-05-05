@@ -26,6 +26,8 @@
     <link rel="stylesheet" href="<%= admin_static_path(@conn, "/plugins/datepicker/datepicker3.css") %>">
     <!-- Daterange picker -->
     <link rel="stylesheet" href="<%= admin_static_path(@conn, "/plugins/daterangepicker/daterangepicker-bs3.css") %>">
+    <!-- select2 -->
+    <link rel="stylesheet" href="<%= admin_static_path(@conn, "/plugins/select2/select2.css") %>">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="<%= admin_static_path(@conn, "/css/ex_admin.css") %>">
 
@@ -92,6 +94,8 @@
     <script src="<%= admin_static_path(@conn, "/plugins/slimScroll/jquery.slimscroll.min.js") %>"></script>
     <!-- FastClick -->
     <script src="<%= admin_static_path(@conn, "/plugins/fastclick/fastclick.min.js") %>"></script>
+    <!-- select2 -->
+    <script src='<%= admin_static_path(@conn, "/plugins/select2/select2.js") %>'></script>
 
     <script src='<%= admin_static_path(@conn, "/js/active_admin.js") %>'></script>
     <script src='<%= admin_static_path(@conn, "/js/best_in_place.js") %>'></script>
