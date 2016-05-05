@@ -113,5 +113,6 @@
         $.ajax('/admin/select_theme/'+val)
       });
     });
+    window.ExAdmin = {csrf_token: "<%= Plug.CSRFProtection.get_csrf_token %>"};
   </script>
 </html>
