@@ -6,9 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
+    <meta name="csrf-token" id="_csrf_token" content="<%= Plug.CSRFProtection.get_csrf_token %>" />
 
     <title><%= site_title %></title>
     <link rel="stylesheet" media="screen" type="text/css" href="<%= admin_static_path(@conn, "/css/active_admin.css.css") %>">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <!-- select2 -->
+    <link rel="stylesheet" href="<%= admin_static_path(@conn, "../admin_lte2/plugins/select2/select2.css") %>">
 
     <script src="<%= admin_static_path(@conn, "/js/jquery.js") %>"></script>
     <script src="<%= admin_static_path(@conn, "/js/jquery-ui.min.js") %>"></script>
@@ -17,6 +22,7 @@
     <script src="<%= admin_static_path(@conn, "/js/best_in_place.js") %>"></script>
     <script src="<%= admin_static_path(@conn, "/js/active_admin_lib.js") %>"></script>
     <script src="<%= admin_static_path(@conn, "/js/best_in_place.purr.js") %>"></script>
+    <script src='<%= admin_static_path(@conn, "../admin_lte2/plugins/select2/select2.js") %>'></script>
   </head>
 
   <% resource_label = ExAdmin.Utils.get_resource_label(@conn) |> String.downcase %>
