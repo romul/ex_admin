@@ -38,7 +38,7 @@ defmodule ExAdmin.Mixfile do
   defp deps do
     [
       {:decimal, "~> 1.0"},
-      {:phoenix, "~> 1.1"},
+      {:phoenix, "~> 1.2.0-rc"},
       {:ecto, "~> 2.0.0-rc", override: true},
       {:phoenix_ecto, "~> 3.0.0-rc"},
       {:postgrex, ">= 0.9.0", only: :test},
