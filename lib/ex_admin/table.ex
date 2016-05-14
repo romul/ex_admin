@@ -49,7 +49,7 @@ defmodule ExAdmin.Table do
     theme_module(conn, Table).theme_panel(conn, schema)
   end
 
-  def do_panel(conn, %{table_for: %{resources: resources, columns: columns, opts: opts}}, table_opts) do
+  def do_panel(conn, %{table_for: %{resources: resources, columns: columns, opts: opts}, contents: []}, table_opts) do
     table(Dict.merge(table_opts, opts)) do
       table_head(columns)
       tbody do
@@ -75,10 +75,14 @@ defmodule ExAdmin.Table do
       end
     end
   end
-  def do_panel(_conn, %{contents: %{contents: content}}, _table_opts) do
+  def do_panel(_conn, %{contents: %{contents: content}, table_for: []}, _table_opts) do
     div do
       content |> elem(1) |> Xain.text
     end
+  end
+  def do_panel(conn, %{table_for: table_for_opts, contents: contents_opts}, opts) do
+    do_panel(conn, %{table_for: table_for_opts, contents: []}, opts)
+    do_panel(conn, %{table_for: [], contents: contents_opts}, opts)
   end
   def do_panel(_conn, _schema) do
     ""
@@ -182,4 +186,3 @@ defmodule ExAdmin.Table do
   end
 
 end
-
