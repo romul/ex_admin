@@ -1,10 +1,5 @@
 defmodule ExAdmin.ResourceController do
   @moduledoc false
-  #import ExAdmin.Utils
-  #import ExAdmin.ParamsToAtoms
-  #import ExAdmin.Gettext
-  #import Plug.Conn
-  #import Phoenix.Controller
 
   defmacro __using__(_opts) do
     quote do
@@ -14,7 +9,7 @@ defmodule ExAdmin.ResourceController do
 
       def action(%{private: %{phoenix_action: action}} = conn, _options) do
         conn = conn |> assign(:xhr, get_req_header(conn, "x-requested-with") == ["XMLHttpRequest"])
-        resource = conn.params["resource"]
+        resource = @resource || conn.params["resource"]
         conn = scrub_params(conn, resource, action)
         params = filter_params(conn.params)
         defn = get_registered_by_controller_route!(conn, resource)
